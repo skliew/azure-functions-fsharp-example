@@ -16,5 +16,6 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </None>
     <Compile Include="Delay.fs" />
+    <Compile Include="Echo.fs" />
   </ItemGroup>
 </Project>
