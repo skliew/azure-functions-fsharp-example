@@ -14,11 +14,9 @@ module Echo =
         req: HttpRequestMessage,
         log: ILogger) =
           async {
-            let! bodyStream = req.Content.ReadAsStreamAsync() |> Async.AwaitTask
             let response = new HttpResponseMessage(HttpStatusCode.OK)
 
-            response.Content <- new StreamContent(bodyStream)
-            response.Content.Headers.ContentType <- req.Content.Headers.ContentType
+            response.Content <- req.Content
 
             return response
           } |> Async.StartAsTask
